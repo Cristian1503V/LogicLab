@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Layouts/Main.Master" AutoEventWireup="true" CodeBehind="CodeLab.master.cs" Inherits="LogicLab.Views.Layouts.CodeLab" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+  <asp:ContentPlaceHolder ID="codeLabHeadPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+  <script src="../Js/Editor.js" defer></script>
+
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css'>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js'></script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+  <div class="h-[calc(100vh-70px)] w-full grid grid-cols-2 pt-14 overflow-y-scroll">
+    <div class="h-full w-full">
+      <asp:ContentPlaceHolder ID="codeLabContentPlaceHolder1" runat="server">
+      </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="h-full w-full flex flex-col" >
+      <div class="h-[30%] w-full flex items-center">
+        <div class="w-[50%] h-full flex justify-center items-center">
+          <img src="https://ouch-cdn2.icons8.com/TVd0YmDpcIFQSPXD3d7Xhbz0wjGWl-N3PzwY009tthQ/rs:fit:368:534/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODEy/LzNiNTJjZGQyLWMw/ZWMtNDAxYS04YTFm/LTA0ZDVmYTI5OTMw/MC5wbmc.png" width="200px" alt="">
+        </div>
+        <div class="w-[50%] h-full flex items-center">
+          <h1 class="text-3xl font-extrabold rounded-md  text-black px-3 tracking-tight sm:text-4xl w-[100%]">Hora de  <span class="px-6 rounded-lg bg-[#222222] text-[#fbd44c]">Practicar</span> </h1>
+        </div>
+      </div>
+
+      <div class="h-[70%] w-full flex flex-col items-center">
+        <div class="flex justify-center items-center w-full h-[400px] border border-neutral-400  border-b-0  rounded-t-2xl mt-5">
+          <div id="MNEditor" class="h-[350px] w-[90%]"></div>
+        </div>
+  
+        <div class="flex justify-center items-center w-full h-auto py-4 px-4 border border-neutral-400 rounded-b-2xl">
+          <pre class="w-[90%] flex flex-grow justify-center items-center">
+            <code class="rounded-lg px-6 h-[80px] overflow-y-scroll text-gray-400 bg-neutral-800 w-[90%]" id="codeOutput"></code>
+          </pre>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          hljs.highlightAll();
+        });
+      </script>
+    </div> 
+  </div>
+</asp:Content>
