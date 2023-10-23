@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs"
+  Inherits="LogicLab.Views.Layouts.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../Styles/Main.css" rel="stylesheet" />
+  <link
+    rel="preload"
+    href="../Fonts/Mona-Sans.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/JavaScript.js" defer></script>
+
+  <link data-n-head="ssr" rel="icon" type="image/png" size="16" data-hid="favicon-16" href="https://maxst.icons8.com/vue-static/ouch/seo/favicon.png">
+
+  <title></title>
+  <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="w-screen h-full min-w-full min-h-screen max-w-[100vw] bg-[#0a0a0a] flex flex-col items-center pt-3">
+  <form
+    class="w-full h-full min-h-full flex flex-col items-center bg-[#ffffff] border rounded-t-[40px]" runat="server">
+    <div class="max-w-7xl w-full h-full flex flex-col">
+      <header class="flex justify-between sticky z-30 h-14 inset-x-0 top-5 rounded-full bg-white px-11">
+        <div class="logo-container flex flex-row gap-1 items-center">
+          <a href="../Pages/Home.aspx" class="flex flex-row gap-1 items-center">
+            <svg
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+              preserveAspectRatio="xMinYMid meet"
+              width="35px"
+              height="32px">
+              <rect
+                clip-path="url(#:R6ata:-clip)"
+                class="h-8 transition-all duration-300 fill-neutral-950 w-0 group-hover/logo:w-8">
+              </rect>
+              <use
+                href="#:R6ata:-path"
+                class="stroke-neutral-950"
+                fill="none"
+                stroke-width="1.5">
+              </use>
+              <defs>
+                <path
+                  id=":R6ata:-path"
+                  d="M3.25 26v.75H7c1.305 0 2.384-.21 3.346-.627.96-.415 1.763-1.02 2.536-1.752.695-.657 1.39-1.443 2.152-2.306l.233-.263c.864-.975 1.843-2.068 3.071-3.266 1.209-1.18 2.881-1.786 4.621-1.786h5.791V5.25H25c-1.305 0-2.384.21-3.346.627-.96.415-1.763 1.02-2.536 1.751-.695.658-1.39 1.444-2.152 2.307l-.233.263c-.864.975-1.843 2.068-3.071 3.266-1.209 1.18-2.881 1.786-4.621 1.786H3.25V26Z">
+                </path>
+                <clipPath id=":R6ata:-clip">
+                  <use href="#:R6ata:-path"></use>
+                </clipPath>
+              </defs>
+            </svg>
+
+            <h1 class="font-bold text-2xl text-center">LogicLab.</h1>
+          </a>
+        </div>
+
+        <asp:Panel ID="authPanel" runat="server" Visible="false">
+          <nav class="flex flex-row items-center">
+            <ul class="nav-list">
+              <li class="dropdown  py-2 px-3  border-b-2 border-white/0 hover:border-b-2 group-hover:border-transparent hover:border-black transition-all duration-100">
+                <a href="#" class="text-black flex flex-row items-center gap-2">Fundamentos
+                    <img src="https://img.icons8.com/?size=64&id=JfQCs7ejnqNf&format=png" alt="" class="w-3 h-3 opacity-75">
+                </a>
+
+                <ul class="dropdown-content  mt-1.5 text-white hidden group left-[-0.3rem]">
+                  <li><a href="../Pages/ForLoop.aspx">Ciclo For</a></li>
+                  <li><a href="#">Ciclo While</a></li>
+                  <li><a href="../Pages/Conditional.aspx">Condicionales</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown py-2 px-3  border-b-2 border-white/0 hover:border-b-2 hover:border-black transition-all duration-100">
+                <a href="#" class="text-black flex flex-row items-center gap-2 group">Colecciones
+                    <img src="https://img.icons8.com/?size=64&id=JfQCs7ejnqNf&format=png" alt="" class="w-3 h-3 opacity-75">
+                </a>
+
+                <ul class="dropdown-content mt-2 text-white hidden left-[-0.8rem]">
+                  <li><a href="../Pages/List.aspx">List</a></li>
+                  <li><a href="../Pages/ArrayList.aspx">ArrayList</a></li>
+                </ul>
+              </li>
+
+              <li class="inline-block relative py-2 px-3  hover:border-b-2 border-black transition-all duration-100">
+                <a class="nav-link  text-black" href="../Pages/Vector.aspx">Vectores</a>
+              </li>
+
+              <li class="inline-block relative  py-2 px-3  hover:border-b-2 border-black transition-all duration-100">
+                <asp:HyperLink ID="repositoryLink" runat="server" NavigateUrl="~/Views/Pages/Repository.aspx" class="nav-link">Repository</asp:HyperLink>
+              </li>
+            </ul>
+          </nav>
+        </asp:Panel>
+
+        <div class="flex flex-row items-center">
+          <ul id="panelInfoCompany" runat="server" class="nav-list flex">
+            <li class="inline-block relative  py-2 px-3 border-b-2 border-transparent hover:border-black transition-all duration-100">
+              <asp:HyperLink ID="supportLink" runat="server" NavigateUrl="~/Views/Pages/Support.aspx" class="nav-link" Visible="false">Contactanos</asp:HyperLink>
+            </li>
+
+            <li class="bg-black text-white py-2 px-8 rounded-full hover:bg-neutral-800 transition-all duration-200" id="liLogin" runat="server">
+              <asp:HyperLink ID="btnLogin" runat="server" NavigateUrl="~/Views/Pages/Login.aspx" class="nav-link">Log in</asp:HyperLink>
+            </li>
+          </ul>
+
+          <div>
+            
+
+          <li id="imgContainer" runat="server" class="dropdown" Visible="false">
+            <asp:Image ID="userImage" runat="server" class="w-10 h-10 rounded-full object-cover cursor-pointer"/>
+
+            <ul class="dropdown-content  mt-2 px-3 py-2  text-white hidden group left-[-0.3rem]">
+              <li><a href="#">My perfil</a></li>
+              <li><asp:LinkButton ID="closeSession" runat="server" OnClick="closeSession_Click">Log Out</asp:LinkButton></li>
+            </ul>
+          </li>
+
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </main>
+
+    </div>
+  </form>
+</body>
+</html>
