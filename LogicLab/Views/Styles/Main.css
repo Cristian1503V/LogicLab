@@ -1,0 +1,94 @@
+﻿@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('../Fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+      url('../Fonts/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
+
+
+.content::selection {
+    background: rgba(139, 149, 0, 0.188);
+    color: #b3ac46;
+}
+
+.asp-textbox::selection {
+    background: rgba(30,0,149,.188);
+    color: #7e46b3;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+html,
+:root,
+*,
+*:before,
+*:after {
+    font-family: 'Mona Sans',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+
+    
+    
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .nav-list li {
+        margin: 10px;
+        
+    }
+
+        .nav-list li a {
+            text-decoration: none;
+        }
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: rgba(0,0,0,.85);
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+    .dropdown-content li {
+        display: block;
+        margin-top: 1rem;
+        padding: 0 1rem 0 1rem;
+        text-align: center 
+    }
+
+
+
+.dropdown-content li:hover {
+    background-color : #ffffff;
+    color: black;
+    border-radius: 10px;
+     
+}
